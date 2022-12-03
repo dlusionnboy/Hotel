@@ -17,8 +17,8 @@ class Kamar extends Migration
             'deskripsi'     => ['type'=>'text', 'null'=>true],           
         ]);
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('kamartipe_id', 'kamartipe', 'id', 'cascade', 'set null');
-        $this->forge->addForeignKey('kamarstatus_id', 'kamarstatus', 'id', 'cascade', 'set null');
+        $this->forge->addForeignKey('kamartipe_id', 'kamartipe', 'id', 'cascade');
+        $this->forge->addForeignKey('kamarstatus_id', 'kamarstatus', 'id', 'cascade');
         $this->forge->createTable('kamar');
     }
 

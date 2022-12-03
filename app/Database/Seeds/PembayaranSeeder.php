@@ -9,7 +9,8 @@ class PembayaranSeeder extends Seeder
 {
     public function run()
     {
-        $r =(int) (new PembayaranModel())->insert([
+        $r = (int)(new PembayaranModel())->insert([
+            'id' => 0,
             'tgl' => '2022-11-02',
             'tagihan' => '650000',
             'dibayar' => '650000',
@@ -17,6 +18,7 @@ class PembayaranSeeder extends Seeder
             'metodebayar_id' => 1,
             'pengguna_id' => 1,
         ]);
+        
         echo "hasil insert $r";
     }
 }

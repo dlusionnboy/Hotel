@@ -15,14 +15,14 @@ class Kamartarif extends Migration
             'tgl_mulai'     => ['type'=>'date', 'null'=>true],
             'tgl_selesai'   => ['type'=>'date', 'null'=>true],
             'tipetarif_id'  => ['type'=>'int', 'constraint'=>10, 'unsigned'=>true],
-            'create_at'     => ['type'=>'datetime', 'null'=>true],
+            'created_at'     => ['type'=>'datetime', 'null'=>true],
             'updated_at'    => ['type'=>'datetime', 'null'=>true],
             'deleted_at'    => ['type'=>'datetime', 'null'=>true],
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('kamartipe_id', 'kamartipe', 'id', 'cascade', 'set null');
-        $this->forge->addForeignKey('tipetarif_id', 'tipetarif', 'id', 'cascade', 'set null');
+        $this->forge->addForeignKey('kamartipe_id', 'kamartipe', 'id', 'cascade');
+        $this->forge->addForeignKey('tipetarif_id', 'tipetarif', 'id', 'cascade');
         $this->forge->createTable('kamartarif');
     }
 

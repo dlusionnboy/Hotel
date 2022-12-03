@@ -15,5 +15,6 @@ class PemesananstatusSeeder extends Seeder
             'aktif' => 'Y',
         ]);
         echo "hasil id = $id";
+        
     }
 }

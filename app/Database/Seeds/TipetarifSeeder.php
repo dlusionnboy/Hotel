@@ -9,12 +9,13 @@ class TipetarifSeeder extends Seeder
 {
     public function run()
     {
-        $id = (int)(new TipetarifModel())->insert([
+        $id = (new TipetarifModel())->insert([
             'tipe' => 'normal',
             'keterangan' => 'hari biasa',
             'urutan' => '1',
             'aktif' => 'Y',
         ]);
         echo "hasil id = $id";
+        
     }
 }

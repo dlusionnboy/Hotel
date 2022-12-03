@@ -9,8 +9,8 @@ class KamarDipesanSeeder extends Seeder
 {
     public function run()
     {
-        $r = (new KamarDipesanModel())->insert([
-            'pemesanan_id' => 1,
+        $r = (int)(new KamarDipesanModel())->insert([
+            'pemesanan_id' => 0,
             'kamar_id' => 1,
             'tarif' => '1000000',
             'pengguna_id' => 1,

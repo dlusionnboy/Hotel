@@ -28,7 +28,7 @@ class PenggunaTest extends CIUnitTestCase{
             'notelp' => '0566175',
             'nohp' => '08436785013',
             'email' => 'admin@gmail.com',
-            'level' => 'M',
+            'level' => 'R',
             'sandi' => password_hash('admin', PASSWORD_BCRYPT),
             'token_reset' => '123456',
         ])->getJSON();
@@ -49,7 +49,7 @@ class PenggunaTest extends CIUnitTestCase{
             'notelp' => '0566175',
             'nohp' => '08436785013',
             'email' => 'adminupdate@gmail.com',
-            'level' => 'M',
+            'level' => 'R',
             'id' => $js['id']
         ])->assertStatus(200);
 

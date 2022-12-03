@@ -17,11 +17,11 @@ class Kamarstatus extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->createTable('kamartarif');
+        $this->forge->createTable('kamarstatus');
     }
 
     public function down()
     {
-        $this->forge->droptable('kamartarif');
+        $this->forge->droptable('kamarstatus');
     }
 }

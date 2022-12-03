@@ -4,6 +4,7 @@ namespace App\Database\Seeds;
 
 use App\Database\Migrations\Pengguna;
 use App\Models\PenggunaModel;
+use CodeIgniter\Database\Exceptions\DatabaseException;
 use CodeIgniter\Database\Seeder;
 
 class PenggunaSeeder extends Seeder
@@ -20,7 +21,7 @@ class PenggunaSeeder extends Seeder
             'notelp' => '0566175',
             'nohp' => '08436785013',
             'email' => 'admin@gmail.com',
-            'level' => 'M',
+            'level' => 'R',
             'sandi' => password_hash('admin', PASSWORD_BCRYPT),
             'token_reset' => '123456',
         ]);

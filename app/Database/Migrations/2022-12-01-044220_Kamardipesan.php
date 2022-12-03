@@ -19,8 +19,8 @@ class Kamardipesan extends Migration
         ]);
         $this->forge->addPrimaryKey('id');
         $this->forge->addForeignKey('pemesanan_id', 'pemesanan', 'id', 'cascade');
-        $this->forge->addForeignKey('kamar_id', 'kamar', 'id', 'cascade', 'set null');
-        $this->forge->addForeignKey('pengguna_id', 'penggunahotel', 'id', 'cascade', 'set null');
+        $this->forge->addForeignKey('kamar_id', 'kamar', 'id', 'cascade');
+        $this->forge->addForeignKey('pengguna_id', 'pengguna', 'id', 'cascade');
         $this->forge->createTable('kamardipesan');
     }
 

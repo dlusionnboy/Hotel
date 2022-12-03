@@ -9,7 +9,7 @@ class TamuSeeder extends Seeder
 {
     public function run()
     {
-        $r =(int) (new TamuModel())->insert([
+        $r = (int)(new TamuModel())->insert([
             'nama_depan' => 'Ahmad',
             'nama_belakang' => 'Hidayat',
             'gender' => 'L',
@@ -21,6 +21,7 @@ class TamuSeeder extends Seeder
             'sandi' => password_hash('user', PASSWORD_BCRYPT),
             'token_reset' => '123456',
         ]);
+        
         echo "hasil insert $r";
     }
 }
