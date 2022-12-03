@@ -54,6 +54,7 @@
                                     <option value="T">Tidak Aktif</option>
                                 </select>
                             </div>
+                            </form>
                         <div class="modal-footer">
                             <button class="btn btn-success" id="btn-menambahkan" >Menambahkan</button>
                         </div>

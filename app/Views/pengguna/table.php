@@ -109,7 +109,7 @@
                                 <label class="form-label">Token Reset</label>
                                 <input type="text" name="token_reset" class="form-control">
                             </div>
-
+                            </form>
                         <div class="modal-footer">
                             <button class="btn btn-success" id="btn-menambahkan" >Menambahkan</button>
                         </div>

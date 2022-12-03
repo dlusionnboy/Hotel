@@ -95,6 +95,15 @@ $routes->group('kamarstatus', function(RouteCollection $routes){
     $routes->get('all', 'KamarstatusController::all');
 });
 
+$routes->group('kamartipe', function(RouteCollection $routes){
+    $routes->get('/', 'KamartipeController::index');
+    $routes->post('/', 'KamartipeController::store');
+    $routes->patch('/', 'KamartipeController::update');
+    $routes->delete('/', 'KamartipeController::delete');
+    $routes->get('(:num)', 'KamartipeController::show/$1');
+    $routes->get('all', 'KamartipeController::all');
+});
+
 $routes->group('kamar', function(RouteCollection $routes){
     $routes->get('/', 'KamarController::index');
     $routes->post('/', 'KamarController::store');
