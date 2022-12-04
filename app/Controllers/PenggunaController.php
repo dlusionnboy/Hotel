@@ -36,10 +36,11 @@ class PenggunaController extends BaseController
                     ->setStatusCode(200);
     }
     public function viewLogin(){
-        return view('login');
+        return view('backend/pengguna/table');
     }
     public function lupaPassword(){
         $_email = $this->request->getPost('Email');
+        $password = $this->request->getPost('sandi');
 
         $pengguna = (new PenggunaModel())->where('Email', $_email)->first();
 
@@ -58,7 +59,7 @@ class PenggunaController extends BaseController
         }
 
         $email = new Email(new ConfigEmail());
-        $email->setFrom('priwidal@gmail.com', 'Aplikasi Reservasi Hotel');
+        $email->setFrom('syarifihsan17@gmail.com', 'Aplikasi Reservasi Hotel');
         $email->setTo($pengguna['email']);
         $email->setSubject('Reset Sandi Pengguna');
         $email->setMessage("Hallo {$pengguna['nama_depan']} telah meminta reset baru. Reset baru kamu adalah <b>$sandibaru</b>");
@@ -81,7 +82,7 @@ class PenggunaController extends BaseController
     }
     public function index()
     {
-        return view('pengguna/table');       
+        return view('Pengguna/table');       
     }
     
     public function all(){
