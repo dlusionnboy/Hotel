@@ -41,16 +41,16 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->group('login', function(RouteCollection $routes){
+$routes->group('/login', ['filter'=>'ceksudahlogin'], function(RouteCollection $routes){
     $routes->get('lupa', 'PenggunaController::viewLupaPassword');
     $routes->get('/', 'PenggunaController::viewLogin');
-    $routes->post('/', 'PenggunaController::login');
-    $routes->delete('/', 'PenggunaController::logout');
+    $routes->post('/', 'DashboardController::login');
     $routes->patch('/', 'PenggunaController::lupaPassword');
     
 });
+$routes->delete('login', 'PenggunaController::logout');
 
-$routes->group('pengguna', function(RouteCollection $routes){
+$routes->group('pengguna', ['filter'=>'otentikasi'], function(RouteCollection $routes){
     $routes->get('/', 'PenggunaController::index');
     $routes->post('/', 'PenggunaController::store');
     $routes->patch('/', 'PenggunaController::update');
@@ -165,6 +165,10 @@ $routes->group('pembayaran', function(RouteCollection $routes){
     $routes->delete('/', 'PembayaranController::delete');
     $routes->get('(:num)', 'PembayaranController::show/$1');
     $routes->get('all', 'PembayaranController::all');
+});
+
+$routes->group('dashboard',['filter'=>'isLoggedIn'], function(RouteCollection $routes){
+    $routes->get('/', 'DashboardController::index');
 });
 /*
  * --------------------------------------------------------------------
